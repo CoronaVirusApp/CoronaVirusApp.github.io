@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+
+	<style>
+		* {
+			margin: 0;
+		}
+
+		.data {
+			display: flex;
+			padding-left: 5vw;
+		}
+
+		.data div {
+			height: 10vh;
+			width: 28.6vw;
+			margin-right: 2vw;
+			text-align: center;
+		}
+
+		.data div h2 {
+			margin-top: 1.5vh;
+			font-size: 3vh;
+			font-family: 'Nunito', sans-serif;
+		}
+
+		.data div h3 {
+			margin-top: 0.5vh;
+			font-size: 1.8vh;
+			font-family: 'Nunito', sans-serif;
+		}
+
+		.grey {
+			border-radius: 1vh;
+			border: solid 1px #cecece;
+			background-color: #f2f2f2;
+		}
+
+		.green {
+			border-radius: 1vh;
+			border: solid 1px #a8dab5;
+			background-color: #e7f4ea;
+		}
+
+		.red {
+			border-radius: 1vh;
+			border: solid 1px #f5aea8;
+			background-color: #fce8e7;
+		}
+		
+		.grey h2, .grey h3{
+			color: #000;
+		} 
+		
+		.green h2, .green h3{
+			color: #2d8749;
+		}
+		
+		.red h2, .red h3{
+			color: #a41a18;
+		} 
+		
+		
+	</style>
+
+</head>
+
+<body>
+
+	<div class="animated fadeInLeft delay-2s data">
+		<div class="grey">
+			<h2 id="d_total">0</h2>
+			<h3>Total Cases</h3>
+		</div>
+		<div class="green">
+			<h2 id="d_recovered">0</h2>
+			<h3>Recovered</h3>
+		</div>
+		<div class="red">
+			<h2 id="d_deaths">0</h2>
+			<h3>Deaths</h3>
+		</div>
+	</div>
+
+	<script src="dailycase.js"></script>
+</body>
+
+</html>

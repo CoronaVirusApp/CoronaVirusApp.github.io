@@ -1,0 +1,997 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>State Live Data - Made by Druhin</title>
+	<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script type="text/javascript">
+		window._mNHandle = window._mNHandle || {};
+		window._mNHandle.queue = window._mNHandle.queue || [];
+		medianet_versionId = "3121199";
+	</script>
+	<script src="https://contextual.media.net/dmedianet.js?cid=8CU281U8U" async="async"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
+
+
+	<style>
+		* {
+			margin: 0;
+		}
+
+		.data {
+			display: flex;
+		}
+
+		.data div {
+			height: 10vh;
+			width: 28vw;
+			margin-right: 2vw;
+			text-align: center;
+		}
+
+		.data div h2 {
+			margin-top: 1.5vh;
+			font-size: 3vh;
+			font-family: 'Nunito', sans-serif;
+		}
+
+		.data div h3 {
+			margin-top: 0.5vh;
+			font-size: 1.8vh;
+			font-family: 'Nunito', sans-serif;
+		}
+
+		.grey {
+			border-radius: 1vh;
+			border: solid 0.2vh #cecece;
+			background-color: #f2f2f2;
+		}
+
+		.green {
+			border-radius: 1vh;
+			border: solid 0.2vh #a8dab5;
+			background-color: #e7f4ea;
+		}
+
+		.red {
+			border-radius: 1vh;
+			border: solid 0.2vh #f5aea8;
+			background-color: #fce8e7;
+		}
+
+		.grey h2,
+		.grey h3 {
+			color: #000;
+		}
+
+		.green h2,
+		.green h3 {
+			color: #2d8749;
+		}
+
+		.red h2,
+		.red h3 {
+			color: #a41a18;
+		}
+
+
+		/*  from style.css*/
+
+		* {
+			margin: 0;
+			padding: 0;
+		}
+
+		.topbar {
+			position: fixed;
+			height: 7vh;
+			width: 100vw;
+			/*	background-color: #4571E2;*/
+			background-image: linear-gradient(to bottom, #063B59, #4CAEE3);
+			border-bottom-left-radius: 2.3vh;
+			border-bottom-right-radius: 2.3vh;
+			display: flex;
+			text-align: center;
+			justify-content: center;
+			z-index: 999;
+		}
+
+		.topbar h1 {
+			margin: auto;
+			text-align: center;
+			font-size: 2vh;
+			font-weight: 600;
+			font-family: 'Nunito', sans-serif;
+			color: #fff;
+		}
+
+		/*
+
+		.heading {
+			margin-left: 5vw;
+		}
+
+		.heading h2 {
+			font-family: 'Nunito', sans-serif;
+			font-size: 1.5em;
+			font-weight: 600;
+			color: #000000;
+		}
+
+
+		.heading h3 {
+			font-family: 'Nunito', sans-serif;
+			font-size: 1.8em;
+			font-weight: 400;
+			color: #545454;
+		}
+*/
+
+		.head {
+			margin-left: 5vw;
+			font-family: 'Nunito', sans-serif;
+			font-size: 35px;
+			font-weight: 600;
+			color: #000000;
+		}
+
+		.state {
+			margin-left: 5vw;
+			font-family: 'Nunito', sans-serif;
+			font-size: 22px;
+			font-weight: 600;
+			color: #545454;
+		}
+
+		.top-space {
+			height: 11vh;
+		}
+
+		p {
+			height: 4vh;
+		}
+
+		.data {
+			display: flex;
+			margin-left: 5vw;
+			margin-top: 2vh;
+		}
+
+		h4 {
+			text-align: center;
+			justify-content: center;
+			font-family: 'Nunito', sans-serif;
+			font-size: 15px;
+			font-weight: 400;
+			color: #545454;
+		}
+
+		.desktop {
+			display: none;
+		}
+
+
+		/* 
+  ##Device = Desktops
+  ##Screen = 1281px to higher resolution desktops
+*/
+
+		@media (min-width: 1281px) {
+
+			.desktop {
+				margin-top: 25vh;
+				display: block;
+				font-family: 'Nunito', sans-serif;
+				font-size: 5vh;
+				font-weight: 600;
+				justify-content: center;
+				text-align: center;
+				color: #fff;
+			}
+
+			.topbar,
+			.all {
+				display: none;
+			}
+
+			body {
+				background-color: #131313;
+			}
+		}
+
+		/* 
+  ##Device = Laptops, Desktops
+  ##Screen = B/w 1025px to 1280px
+*/
+
+		@media (min-width: 1025px) and (max-width: 1280px) {
+
+			.desktop {
+				margin-top: 25vh;
+				display: block;
+				font-family: 'Nunito', sans-serif;
+				font-size: 5vh;
+				font-weight: 600;
+				justify-content: center;
+				text-align: center;
+				color: #fff;
+			}
+
+			.topbar,
+			.all {
+				display: none;
+			}
+
+			body {
+				background-color: #131313;
+			}
+
+		}
+
+
+		/* 
+  			##Device = Low Resolution Tablets, Mobiles (Landscape)
+  			##Screen = B/w 481px to 767px
+			*/
+
+		@media (min-width: 481px) and (max-width: 767px) {
+
+			.desktop {
+				margin-top: 25vh;
+				display: block;
+				font-family: 'Nunito', sans-serif;
+				font-size: 5vh;
+				font-weight: 600;
+				justify-content: center;
+				text-align: center;
+				color: #fff;
+				content: "Rotate your device";
+			}
+
+			.topbar,
+			.all {
+				display: none;
+			}
+
+			body {
+				background-color: #131313;
+			}
+
+		}
+	</style>
+
+
+</head>
+
+<body>
+	<div class="animated slideInDown faster delay-3s topbar">
+		<h1>Corona Info - India 🇮🇳</h1>
+	</div>
+
+	<p class="top-space"></p>
+
+
+
+
+	<h2 class="head">Live State Statistics</h2>
+	<p></p>
+
+
+	<h3 id="s1" class="state">State Name</h3>
+
+	<div class="animated fadeInLeft delay-2s data">
+		<div class="grey">
+			<h2 id="t1"><b>0</b></h2>
+			<h3><b>Total Cases</b></h3>
+		</div>
+		<div class="green">
+			<h2 id="r1"><b>0</b></h2>
+			<h3><b>Recovered</b></h3>
+		</div>
+		<div class="red">
+			<h2 id="d1"><b>0</b></h2>
+			<h3><b>Deaths</b></h3>
+		</div>
+	</div>
+
+	<br><br>
+
+	<h3 id="s2" class="state">State Name</h3>
+
+	<div class="animated fadeInLeft delay-2s data">
+		<div class="grey">
+			<h2 id="t2"><b>0</b></h2>
+			<h3><b>Total Cases</b></h3>
+		</div>
+		<div class="green">
+			<h2 id="r2"><b>0</b></h2>
+			<h3><b>Recovered</b></h3>
+		</div>
+		<div class="red">
+			<h2 id="d2"><b>0</b></h2>
+			<h3><b>Deaths</b></h3>
+		</div>
+	</div>
+
+	<br><br>
+
+	<h3 id="s3" class="state">State Name</h3>
+
+	<div class="animated fadeInLeft delay-2s data">
+		<div class="grey">
+			<h2 id="t3"><b>0</b></h2>
+			<h3><b>Total Cases</b></h3>
+		</div>
+		<div class="green">
+			<h2 id="r3"><b>0</b></h2>
+			<h3><b>Recovered</b></h3>
+		</div>
+		<div class="red">
+			<h2 id="d3"><b>0</b></h2>
+			<h3><b>Deaths</b></h3>
+		</div>
+	</div>
+
+	<br><br>
+
+	<h3 id="s4" class="state">State Name</h3>
+
+	<div class="animated fadeInLeft delay-2s data">
+		<div class="grey">
+			<h2 id="t4"><b>0</b></h2>
+			<h3><b>Total Cases</b></h3>
+		</div>
+		<div class="green">
+			<h2 id="r4"><b>0</b></h2>
+			<h3><b>Recovered</b></h3>
+		</div>
+		<div class="red">
+			<h2 id="d4"><b>0</b></h2>
+			<h3><b>Deaths</b></h3>
+		</div>
+	</div>
+
+	<br><br>
+
+	<h3 id="s5" class="state">State Name</h3>
+
+	<div class="animated fadeInLeft delay-2s data">
+		<div class="grey">
+			<h2 id="t5"><b>0</b></h2>
+			<h3><b>Total Cases</b></h3>
+		</div>
+		<div class="green">
+			<h2 id="r5"><b>0</b></h2>
+			<h3><b>Recovered</b></h3>
+		</div>
+		<div class="red">
+			<h2 id="d5"><b>0</b></h2>
+			<h3><b>Deaths</b></h3>
+		</div>
+	</div>
+
+	<br><br>
+
+	<h3 id="s6" class="state">State Name</h3>
+
+	<div class="animated fadeInLeft delay-2s data">
+		<div class="grey">
+			<h2 id="t6"><b>0</b></h2>
+			<h3><b>Total Cases</b></h3>
+		</div>
+		<div class="green">
+			<h2 id="r6"><b>0</b></h2>
+			<h3><b>Recovered</b></h3>
+		</div>
+		<div class="red">
+			<h2 id="d6"><b>0</b></h2>
+			<h3><b>Deaths</b></h3>
+		</div>
+	</div>
+
+	<br><br>
+
+	<h3 id="s7" class="state">State Name</h3>
+
+	<div class="animated fadeInLeft delay-2s data">
+		<div class="grey">
+			<h2 id="t7"><b>0</b></h2>
+			<h3><b>Total Cases</b></h3>
+		</div>
+		<div class="green">
+			<h2 id="r7"><b>0</b></h2>
+			<h3><b>Recovered</b></h3>
+		</div>
+		<div class="red">
+			<h2 id="d7"><b>0</b></h2>
+			<h3><b>Deaths</b></h3>
+		</div>
+	</div>
+
+	<br><br>
+
+	<h3 id="s8" class="state">State Name</h3>
+
+	<div class="animated fadeInLeft delay-2s data">
+		<div class="grey">
+			<h2 id="t8"><b>0</b></h2>
+			<h3><b>Total Cases</b></h3>
+		</div>
+		<div class="green">
+			<h2 id="r8"><b>0</b></h2>
+			<h3><b>Recovered</b></h3>
+		</div>
+		<div class="red">
+			<h2 id="d8"><b>0</b></h2>
+			<h3><b>Deaths</b></h3>
+		</div>
+	</div>
+
+	<br><br>
+
+	<h3 id="s9" class="state">State Name</h3>
+
+	<div class="animated fadeInLeft delay-2s data">
+		<div class="grey">
+			<h2 id="t9"><b>0</b></h2>
+			<h3><b>Total Cases</b></h3>
+		</div>
+		<div class="green">
+			<h2 id="r9"><b>0</b></h2>
+			<h3><b>Recovered</b></h3>
+		</div>
+		<div class="red">
+			<h2 id="d9"><b>0</b></h2>
+			<h3><b>Deaths</b></h3>
+		</div>
+	</div>
+
+	<br><br>
+
+	<h3 id="s10" class="state">State Name</h3>
+
+	<div class="animated fadeInLeft delay-2s data">
+		<div class="grey">
+			<h2 id="t10"><b>0</b></h2>
+			<h3><b>Total Cases</b></h3>
+		</div>
+		<div class="green">
+			<h2 id="r10"><b>0</b></h2>
+			<h3><b>Recovered</b></h3>
+		</div>
+		<div class="red">
+			<h2 id="d10"><b>0</b></h2>
+			<h3><b>Deaths</b></h3>
+		</div>
+	</div>
+
+	<br><br>
+
+	<h3 id="s11" class="state">State Name</h3>
+
+	<div class="animated fadeInLeft delay-2s data">
+		<div class="grey">
+			<h2 id="t11"><b>0</b></h2>
+			<h3><b>Total Cases</b></h3>
+		</div>
+		<div class="green">
+			<h2 id="r11"><b>0</b></h2>
+			<h3><b>Recovered</b></h3>
+		</div>
+		<div class="red">
+			<h2 id="d11"><b>0</b></h2>
+			<h3><b>Deaths</b></h3>
+		</div>
+	</div>
+
+	<br><br>
+
+	<h3 id="s12" class="state">State Name</h3>
+
+	<div class="animated fadeInLeft delay-2s data">
+		<div class="grey">
+			<h2 id="t12"><b>0</b></h2>
+			<h3><b>Total Cases</b></h3>
+		</div>
+		<div class="green">
+			<h2 id="r12"><b>0</b></h2>
+			<h3><b>Recovered</b></h3>
+		</div>
+		<div class="red">
+			<h2 id="d12"><b>0</b></h2>
+			<h3><b>Deaths</b></h3>
+		</div>
+	</div>
+
+	<br><br>
+
+	<h3 id="s13" class="state">State Name</h3>
+
+	<div class="animated fadeInLeft delay-2s data">
+		<div class="grey">
+			<h2 id="t13"><b>0</b></h2>
+			<h3><b>Total Cases</b></h3>
+		</div>
+		<div class="green">
+			<h2 id="r13"><b>0</b></h2>
+			<h3><b>Recovered</b></h3>
+		</div>
+		<div class="red">
+			<h2 id="d13"><b>0</b></h2>
+			<h3><b>Deaths</b></h3>
+		</div>
+	</div>
+
+	<br><br>
+
+	<h3 id="s14" class="state">State Name</h3>
+
+	<div class="animated fadeInLeft delay-2s data">
+		<div class="grey">
+			<h2 id="t14"><b>0</b></h2>
+			<h3><b>Total Cases</b></h3>
+		</div>
+		<div class="green">
+			<h2 id="r14"><b>0</b></h2>
+			<h3><b>Recovered</b></h3>
+		</div>
+		<div class="red">
+			<h2 id="d14"><b>0</b></h2>
+			<h3><b>Deaths</b></h3>
+		</div>
+	</div>
+
+	<br><br>
+
+	<h3 id="s15" class="state">State Name</h3>
+
+	<div class="animated fadeInLeft delay-2s data">
+		<div class="grey">
+			<h2 id="t15"><b>0</b></h2>
+			<h3><b>Total Cases</b></h3>
+		</div>
+		<div class="green">
+			<h2 id="r15"><b>0</b></h2>
+			<h3><b>Recovered</b></h3>
+		</div>
+		<div class="red">
+			<h2 id="d15"><b>0</b></h2>
+			<h3><b>Deaths</b></h3>
+		</div>
+	</div>
+
+	<br><br>
+
+	<h3 id="s16" class="state">State Name</h3>
+
+	<div class="animated fadeInLeft delay-2s data">
+		<div class="grey">
+			<h2 id="t16"><b>0</b></h2>
+			<h3><b>Total Cases</b></h3>
+		</div>
+		<div class="green">
+			<h2 id="r16"><b>0</b></h2>
+			<h3><b>Recovered</b></h3>
+		</div>
+		<div class="red">
+			<h2 id="d16"><b>0</b></h2>
+			<h3><b>Deaths</b></h3>
+		</div>
+	</div>
+
+	<br><br>
+
+	<h3 id="s17" class="state">State Name</h3>
+
+	<div class="animated fadeInLeft delay-2s data">
+		<div class="grey">
+			<h2 id="t17"><b>0</b></h2>
+			<h3><b>Total Cases</b></h3>
+		</div>
+		<div class="green">
+			<h2 id="r17"><b>0</b></h2>
+			<h3><b>Recovered</b></h3>
+		</div>
+		<div class="red">
+			<h2 id="d17"><b>0</b></h2>
+			<h3><b>Deaths</b></h3>
+		</div>
+	</div>
+
+	<br><br>
+
+	<h3 id="s18" class="state">State Name</h3>
+
+	<div class="animated fadeInLeft delay-2s data">
+		<div class="grey">
+			<h2 id="t18"><b>0</b></h2>
+			<h3><b>Total Cases</b></h3>
+		</div>
+		<div class="green">
+			<h2 id="r18"><b>0</b></h2>
+			<h3><b>Recovered</b></h3>
+		</div>
+		<div class="red">
+			<h2 id="d18"><b>0</b></h2>
+			<h3><b>Deaths</b></h3>
+		</div>
+	</div>
+
+	<br><br>
+
+	<h3 id="s19" class="state">State Name</h3>
+
+	<div class="animated fadeInLeft delay-2s data">
+		<div class="grey">
+			<h2 id="t19"><b>0</b></h2>
+			<h3><b>Total Cases</b></h3>
+		</div>
+		<div class="green">
+			<h2 id="r19"><b>0</b></h2>
+			<h3><b>Recovered</b></h3>
+		</div>
+		<div class="red">
+			<h2 id="d19"><b>0</b></h2>
+			<h3><b>Deaths</b></h3>
+		</div>
+	</div>
+
+	<br><br>
+
+	<h3 id="s20" class="state">State Name</h3>
+
+	<div class="animated fadeInLeft delay-2s data">
+		<div class="grey">
+			<h2 id="t20"><b>0</b></h2>
+			<h3><b>Total Cases</b></h3>
+		</div>
+		<div class="green">
+			<h2 id="r20"><b>0</b></h2>
+			<h3><b>Recovered</b></h3>
+		</div>
+		<div class="red">
+			<h2 id="d20"><b>0</b></h2>
+			<h3><b>Deaths</b></h3>
+		</div>
+	</div>
+
+	<br><br>
+
+	<h3 id="s21" class="state">State Name</h3>
+
+	<div class="animated fadeInLeft delay-2s data">
+		<div class="grey">
+			<h2 id="t21"><b>0</b></h2>
+			<h3><b>Total Cases</b></h3>
+		</div>
+		<div class="green">
+			<h2 id="r21"><b>0</b></h2>
+			<h3><b>Recovered</b></h3>
+		</div>
+		<div class="red">
+			<h2 id="d21"><b>0</b></h2>
+			<h3><b>Deaths</b></h3>
+		</div>
+	</div>
+
+	<br><br>
+	
+	<h3 id="s22" class="state">State Name</h3>
+
+	<div class="animated fadeInLeft delay-2s data">
+		<div class="grey">
+			<h2 id="t22"><b>0</b></h2>
+			<h3><b>Total Cases</b></h3>
+		</div>
+		<div class="green">
+			<h2 id="r22"><b>0</b></h2>
+			<h3><b>Recovered</b></h3>
+		</div>
+		<div class="red">
+			<h2 id="d22"><b>0</b></h2>
+			<h3><b>Deaths</b></h3>
+		</div>
+	</div>
+
+	<br><br>
+	
+	<h3 id="s23" class="state">State Name</h3>
+
+	<div class="animated fadeInLeft delay-2s data">
+		<div class="grey">
+			<h2 id="t23"><b>0</b></h2>
+			<h3><b>Total Cases</b></h3>
+		</div>
+		<div class="green">
+			<h2 id="r23"><b>0</b></h2>
+			<h3><b>Recovered</b></h3>
+		</div>
+		<div class="red">
+			<h2 id="d23"><b>0</b></h2>
+			<h3><b>Deaths</b></h3>
+		</div>
+	</div>
+
+	<br><br>
+	
+	<h3 id="s24" class="state">State Name</h3>
+
+	<div class="animated fadeInLeft delay-2s data">
+		<div class="grey">
+			<h2 id="t24"><b>0</b></h2>
+			<h3><b>Total Cases</b></h3>
+		</div>
+		<div class="green">
+			<h2 id="r24"><b>0</b></h2>
+			<h3><b>Recovered</b></h3>
+		</div>
+		<div class="red">
+			<h2 id="d24"><b>0</b></h2>
+			<h3><b>Deaths</b></h3>
+		</div>
+	</div>
+
+	<br><br>
+	
+	<h3 id="s25" class="state">State Name</h3>
+
+	<div class="animated fadeInLeft delay-2s data">
+		<div class="grey">
+			<h2 id="t25"><b>0</b></h2>
+			<h3><b>Total Cases</b></h3>
+		</div>
+		<div class="green">
+			<h2 id="r25"><b>0</b></h2>
+			<h3><b>Recovered</b></h3>
+		</div>
+		<div class="red">
+			<h2 id="d25"><b>0</b></h2>
+			<h3><b>Deaths</b></h3>
+		</div>
+	</div>
+
+	<br><br>
+	
+	<h3 id="s26" class="state">State Name</h3>
+
+	<div class="animated fadeInLeft delay-2s data">
+		<div class="grey">
+			<h2 id="t26"><b>0</b></h2>
+			<h3><b>Total Cases</b></h3>
+		</div>
+		<div class="green">
+			<h2 id="r26"><b>0</b></h2>
+			<h3><b>Recovered</b></h3>
+		</div>
+		<div class="red">
+			<h2 id="d26"><b>0</b></h2>
+			<h3><b>Deaths</b></h3>
+		</div>
+	</div>
+
+	<br><br>
+	
+	<h3 id="s27" class="state">State Name</h3>
+
+	<div class="animated fadeInLeft delay-2s data">
+		<div class="grey">
+			<h2 id="t27"><b>0</b></h2>
+			<h3><b>Total Cases</b></h3>
+		</div>
+		<div class="green">
+			<h2 id="r27"><b>0</b></h2>
+			<h3><b>Recovered</b></h3>
+		</div>
+		<div class="red">
+			<h2 id="d27"><b>0</b></h2>
+			<h3><b>Deaths</b></h3>
+		</div>
+	</div>
+
+	<br><br>
+	
+	<h3 id="s28" class="state">State Name</h3>
+
+	<div class="animated fadeInLeft delay-2s data">
+		<div class="grey">
+			<h2 id="t28"><b>0</b></h2>
+			<h3><b>Total Cases</b></h3>
+		</div>
+		<div class="green">
+			<h2 id="r28"><b>0</b></h2>
+			<h3><b>Recovered</b></h3>
+		</div>
+		<div class="red">
+			<h2 id="d28"><b>0</b></h2>
+			<h3><b>Deaths</b></h3>
+		</div>
+	</div>
+
+	<br><br>
+	
+	<h3 id="s29" class="state">State Name</h3>
+
+	<div class="animated fadeInLeft delay-2s data">
+		<div class="grey">
+			<h2 id="t29"><b>0</b></h2>
+			<h3><b>Total Cases</b></h3>
+		</div>
+		<div class="green">
+			<h2 id="r29"><b>0</b></h2>
+			<h3><b>Recovered</b></h3>
+		</div>
+		<div class="red">
+			<h2 id="d29"><b>0</b></h2>
+			<h3><b>Deaths</b></h3>
+		</div>
+	</div>
+
+	<br><br>
+	
+	<h3 id="s30" class="state">State Name</h3>
+
+	<div class="animated fadeInLeft delay-2s data">
+		<div class="grey">
+			<h2 id="t30"><b>0</b></h2>
+			<h3><b>Total Cases</b></h3>
+		</div>
+		<div class="green">
+			<h2 id="r30"><b>0</b></h2>
+			<h3><b>Recovered</b></h3>
+		</div>
+		<div class="red">
+			<h2 id="d30"><b>0</b></h2>
+			<h3><b>Deaths</b></h3>
+		</div>
+	</div>
+
+	<br><br>
+	
+	<h3 id="s31" class="state">State Name</h3>
+
+	<div class="animated fadeInLeft delay-2s data">
+		<div class="grey">
+			<h2 id="t31"><b>0</b></h2>
+			<h3><b>Total Cases</b></h3>
+		</div>
+		<div class="green">
+			<h2 id="r31"><b>0</b></h2>
+			<h3><b>Recovered</b></h3>
+		</div>
+		<div class="red">
+			<h2 id="d31"><b>0</b></h2>
+			<h3><b>Deaths</b></h3>
+		</div>
+	</div>
+
+	<br><br>
+	
+	<h3 id="s32" class="state">State Name</h3>
+
+	<div class="animated fadeInLeft delay-2s data">
+		<div class="grey">
+			<h2 id="t32"><b>0</b></h2>
+			<h3><b>Total Cases</b></h3>
+		</div>
+		<div class="green">
+			<h2 id="r32"><b>0</b></h2>
+			<h3><b>Recovered</b></h3>
+		</div>
+		<div class="red">
+			<h2 id="d32"><b>0</b></h2>
+			<h3><b>Deaths</b></h3>
+		</div>
+	</div>
+
+	<br><br>
+	
+	<h3 id="s33" class="state">State Name</h3>
+
+	<div class="animated fadeInLeft delay-2s data">
+		<div class="grey">
+			<h2 id="t33"><b>0</b></h2>
+			<h3><b>Total Cases</b></h3>
+		</div>
+		<div class="green">
+			<h2 id="r33"><b>0</b></h2>
+			<h3><b>Recovered</b></h3>
+		</div>
+		<div class="red">
+			<h2 id="d33"><b>0</b></h2>
+			<h3><b>Deaths</b></h3>
+		</div>
+	</div>
+
+	<br><br>
+	
+	<h3 id="s34" class="state">State Name</h3>
+
+	<div class="animated fadeInLeft delay-2s data">
+		<div class="grey">
+			<h2 id="t34"><b>0</b></h2>
+			<h3><b>Total Cases</b></h3>
+		</div>
+		<div class="green">
+			<h2 id="r34"><b>0</b></h2>
+			<h3><b>Recovered</b></h3>
+		</div>
+		<div class="red">
+			<h2 id="d34"><b>0</b></h2>
+			<h3><b>Deaths</b></h3>
+		</div>
+	</div>
+
+	<br><br>
+	
+	<h3 id="s35" class="state">State Name</h3>
+
+	<div class="animated fadeInLeft delay-2s data">
+		<div class="grey">
+			<h2 id="t35"><b>0</b></h2>
+			<h3><b>Total Cases</b></h3>
+		</div>
+		<div class="green">
+			<h2 id="r35"><b>0</b></h2>
+			<h3><b>Recovered</b></h3>
+		</div>
+		<div class="red">
+			<h2 id="d35"><b>0</b></h2>
+			<h3><b>Deaths</b></h3>
+		</div>
+	</div>
+
+	<br><br>
+	
+	<h3 id="s36" class="state">State Name</h3>
+
+	<div class="animated fadeInLeft delay-2s data">
+		<div class="grey">
+			<h2 id="t36"><b>0</b></h2>
+			<h3><b>Total Cases</b></h3>
+		</div>
+		<div class="green">
+			<h2 id="r36"><b>0</b></h2>
+			<h3><b>Recovered</b></h3>
+		</div>
+		<div class="red">
+			<h2 id="d36"><b>0</b></h2>
+			<h3><b>Deaths</b></h3>
+		</div>
+	</div>
+
+	<br><br>
+	
+	<h3 id="s37" class="state">State Name</h3>
+
+	<div class="animated fadeInLeft delay-2s data">
+		<div class="grey">
+			<h2 id="t37"><b>0</b></h2>
+			<h3><b>Total Cases</b></h3>
+		</div>
+		<div class="green">
+			<h2 id="r37"><b>0</b></h2>
+			<h3><b>Recovered</b></h3>
+		</div>
+		<div class="red">
+			<h2 id="d37"><b>0</b></h2>
+			<h3><b>Deaths</b></h3>
+		</div>
+	</div>
+
+	<h2 class="desktop">Please open in your mobile device</h2>
+
+	<p class="top-space"></p>
+	<h4><b>Made by Druhin</b></h4>
+	<p></p>
+
+
+	<script src="app.js"></script>
+	<script src="scroll-news.js"></script>
+	<script src="state-data.js"></script>
+
+</body>
+
+</html>

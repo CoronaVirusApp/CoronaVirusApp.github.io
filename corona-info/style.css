@@ -1,0 +1,242 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+.topbar {
+	position: fixed;
+	height: 7vh;
+	width: 100vw;
+	/*	background-color: #4571E2;*/
+	background-image: linear-gradient(to bottom, #063B59, #4CAEE3);
+	border-bottom-left-radius: 2.3vh;
+	border-bottom-right-radius: 2.3vh;
+	display: flex;
+	text-align: center;
+	justify-content: center;
+	z-index: 999;
+}
+
+.topbar h1 {
+	margin: auto;
+	text-align: center;
+	font-size: 2vh;
+	font-weight: 600;
+	font-family: 'Nunito', sans-serif;
+	color: #fff;
+}
+
+.heading {
+	margin-left: 5vw;
+}
+
+.heading h2 {
+	font-family: 'Nunito', sans-serif;
+	font-size: 2.1vh;
+	font-weight: 600;
+	color: #000000;
+}
+
+.heading h3 {
+	font-family: 'Nunito', sans-serif;
+	font-size: 1.7vh;
+	font-weight: 400;
+	color: #545454;
+}
+
+.heading2 {
+	margin-left: 5vw;
+	display: flex;
+}
+
+.heading2 h3 {
+	font-family: 'Nunito', sans-serif;
+	font-size: 1.7vh;
+	font-weight: 400;
+	color: #545454;
+}
+
+.all-states {
+	text-decoration: none;
+	position: absolute;
+	right: 0;
+	margin-right: 5vw;
+}
+
+.top-space {
+	height: 11vh;
+}
+
+.phn {
+	margin-top: 2vh;
+	margin-left: 5vw;
+	display: flex;
+}
+
+.phn img {
+	height: 4.5vh;
+	padding-right: 2vw;
+}
+
+.state-help {
+	margin-left: 5vw;
+	margin-top: 1.5vh;
+	height: 3vh;
+	padding-right: 2vw;
+}
+
+.testing-centre {
+	margin-top: 1.5vh;
+	height: 3vh;
+	padding-right: 2vw;
+}
+
+p {
+	height: 5vh;
+}
+
+.data {
+	display: flex;
+	margin-left: 5vw;
+	margin-top: 2vh;
+}
+
+.data img {
+	width: 28.6vw;
+	padding-right: 2vw;
+}
+
+.do {
+	display: flex;
+	margin-left: 5vw;
+	margin-top: 2vh;
+}
+
+.do img {
+	width: 44vw;
+	padding-right: 2vw;
+}
+
+.dont {
+	display: flex;
+	margin-left: 5vw;
+	margin-top: 2vh;
+}
+
+.dont img {
+	width: 44vw;
+	padding-right: 2vw;
+}
+
+h4 {
+	text-align: center;
+	justify-content: center;
+	font-family: 'Nunito', sans-serif;
+	font-size: 1.5vh;
+	font-weight: 400;
+	color: #545454;
+}
+
+video {
+	width: 90vw;
+	margin-left: 5vw;
+	border-radius: 1vh;
+}
+
+.when-tested img {
+	margin-left: 5vw;
+	width: 90vw;
+}
+
+.desktop {
+	display: none;
+}
+
+
+/* 
+  ##Device = Desktops
+  ##Screen = 1281px to higher resolution desktops
+*/
+
+@media (min-width: 1281px) {
+
+	.desktop {
+		margin-top: 25vh;
+		display: block;
+		font-family: 'Nunito', sans-serif;
+		font-size: 5vh;
+		font-weight: 600;
+		justify-content: center;
+		text-align: center;
+		color: #fff;
+	}
+
+	.topbar,
+	.all {
+		display: none;
+	}
+
+	body {
+		background-color: #131313;
+	}
+}
+
+/* 
+  ##Device = Laptops, Desktops
+  ##Screen = B/w 1025px to 1280px
+*/
+
+@media (min-width: 1025px) and (max-width: 1280px) {
+
+	.desktop {
+		margin-top: 25vh;
+		display: block;
+		font-family: 'Nunito', sans-serif;
+		font-size: 5vh;
+		font-weight: 600;
+		justify-content: center;
+		text-align: center;
+		color: #fff;
+	}
+
+	.topbar,
+	.all {
+		display: none;
+	}
+
+	body {
+		background-color: #131313;
+	}
+
+}
+
+
+/* 
+  ##Device = Low Resolution Tablets, Mobiles (Landscape)
+  ##Screen = B/w 481px to 767px
+*/
+
+@media (min-width: 481px) and (max-width: 767px) {
+
+	.desktop {
+		margin-top: 25vh;
+		display: block;
+		font-family: 'Nunito', sans-serif;
+		font-size: 5vh;
+		font-weight: 600;
+		justify-content: center;
+		text-align: center;
+		color: #fff;
+		content: "Rotate your device";
+	}
+
+	.topbar,
+	.all {
+		display: none;
+	}
+
+	body {
+		background-color: #131313;
+	}
+
+}
