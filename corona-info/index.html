@@ -3,7 +3,18 @@
 
 <head>
 	<meta charset="UTF-8">
-	<title>Coronavirus Info - Made by Druhin</title>
+	<title>CoronaInfo by Druhin</title>
+
+	<!--	meta tags-->
+
+	<meta property="og:site_name" content="CoronaInfo by Druhin" />
+	<meta property="og:title" content="CoronaInfo India by Druhin" />
+	<meta property="og:description" content="Coronavirus Mobile Dashboard for India - Live Statistics (Refreshes every minute) | Helpline Numbers | Risks & Precautions" />
+	<meta property="og:image" content="https://raw.githubusercontent.com/Druhin13/corona/master/corona-info/GitHub%20banner.png">
+	<meta property="og:url" content="https://coronavirusapp.github.io">
+
+
+
 	<link href="style.css" rel="stylesheet">
 	<!--	<link href="only-mobile.css" rel="stylesheet">-->
 	<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600&display=swap" rel="stylesheet">
@@ -14,7 +25,6 @@
 		window._mNHandle.queue = window._mNHandle.queue || [];
 		medianet_versionId = "3121199";
 	</script>
-	<script src="https://contextual.media.net/dmedianet.js?cid=8CU281U8U" async="async"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
 
 
@@ -85,7 +95,9 @@
 
 <body>
 	<div class="animated slideInDown faster delay-3s topbar">
+		<!--		<marquee scrollamount="10">-->
 		<h1>Corona Info - India 🇮🇳</h1>
+		<!--		</marquee>-->
 	</div>
 
 	<p class="top-space"></p>
@@ -105,6 +117,7 @@
 		</div>
 		<a href="/corona/corona-info/state-help.html"><img class="state-help" src="assets/state%20helpline.svg"></a>
 		<a href="/corona/corona-info/testing-centre.html"><img class="testing-centre" src="assets/testing%20centre.svg"></a>
+		<a href="#prec-risk-link"><img class="prec-risks" src="assets/prec-and-risks.svg"></a>
 
 		<p></p>
 
@@ -193,26 +206,32 @@
 		<canvas class="animated slideInUp faster delay-3s" id="myChart" width="80vw" height="50vh"></canvas>
 
 		<p></p>
-		
+
 		<!--		daily death  chart-->
 		<canvas class="animated slideInUp faster delay-3s" id="myChart3" width="80vw" height="50vh"></canvas>
-		
+
 		<p></p>
+
+		<!--		daily recovery  chart-->
+		<canvas class="animated slideInUp faster delay-3s" id="myChart6" width="80vw" height="50vh"></canvas>
+
+		<p></p>
+
+		<!--
 		
-		<!--		case-recovery-death india  pie chart-->
 		<canvas class="animated slideInUp faster delay-3s" id="myChart4" width="80vw" height="50vh"></canvas>
 		
 		<p></p>
 		
-		<!--		case-recovery-death state  pie chart-->
+		
 		<canvas class="animated slideInUp faster delay-3s" id="myChart5" width="80vw" height="50vh"></canvas>
 		
-		<p></p>
+		<p></p>-->
 
 		<!--		patient age  chart-->
 		<canvas class="animated slideInUp faster delay-3s" id="myChart2" width="80vw" height="50vh"></canvas>
 
-
+		<br id="prec-risk-link"><br><br>
 
 		<p></p>
 
@@ -242,7 +261,7 @@
 	<h2 class="desktop">Please open in your mobile device</h2>
 
 	<p class="top-space"></p>
-	<h4><b>Made by Druhin</b></h4>
+	<a href="https://druh.in"><h4><b>Made by Druhin</b></h4></a>
 	<p></p>
 
 

@@ -41,51 +41,51 @@
 //	}
 //});
 
-
-
-
-let myChart = document.getElementById('myChart').getContext('2d');
-
-//Global options
-Chart.defaults.global.defaultFontFamily = 'Nunito';
-Chart.defaults.global.defaultFontSize = 25;
-Chart.defaults.global.defaultFontColor = '#000';
-
-let massPopChart = new Chart(myChart, {
-	type: 'line',
-	data: {
-
-		//add a space
-
-		labels: ['4 Apr', '5 Apr', '6 Apr', '7 Apr', '8 Apr', '9 Apr', '10 Apr'],
-		datasets: [{
-			label: 'Confirmed Case',
-
-			//add daily case
-
-			data: [
-				579, 605, 489, 573, 565, 809, 869
-			],
-			backgroundColor: '#ACD1F2'
-		}]
-	},
-	options: {
-		title: {
-			display: true,
-			text: 'Daily Cases in India (Week)',
-			fontSize: 40
-		},
-		legend: {
-			display: true
-		},
-		layout: {
-			padding: {
-				left: 25,
-				right: 25,
-			}
-		}
-	}
-});
+//
+//
+//
+//let myChart = document.getElementById('myChart').getContext('2d');
+//
+////Global options
+//Chart.defaults.global.defaultFontFamily = 'Nunito';
+//Chart.defaults.global.defaultFontSize = 25;
+//Chart.defaults.global.defaultFontColor = '#000';
+//
+//let massPopChart = new Chart(myChart, {
+//	type: 'line',
+//	data: {
+//
+//		//add a space
+//
+//		labels: ['4 Apr', '5 Apr', '6 Apr', '7 Apr', '8 Apr', '9 Apr', '10 Apr'],
+//		datasets: [{
+//			label: 'Confirmed Case',
+//
+//			//add daily case
+//
+//			data: [
+//				579, 605, 489, 573, 565, 809, 869
+//			],
+//			backgroundColor: '#ACD1F2'
+//		}]
+//	},
+//	options: {
+//		title: {
+//			display: true,
+//			text: 'Daily Cases in India (Week)',
+//			fontSize: 40
+//		},
+//		legend: {
+//			display: true
+//		},
+//		layout: {
+//			padding: {
+//				left: 25,
+//				right: 25,
+//			}
+//		}
+//	}
+//});
 
 
 
@@ -145,45 +145,45 @@ let massPopChart = new Chart(myChart, {
 let myChart3 = document.getElementById('myChart3').getContext('2d');
 
 //Global options
-Chart.defaults.global.defaultFontFamily = 'Nunito';
-Chart.defaults.global.defaultFontSize = 25;
-Chart.defaults.global.defaultFontColor = '#000';
-
-let massPopChart3 = new Chart(myChart3, {
-	type: 'line',
-	data: {
-
-		//add a space
-
-		labels: ['4 Apr', '5 Apr', '6 Apr', '7 Apr', '8 Apr', '9 Apr', '10 Apr'],
-		datasets: [{
-			label: 'Death',
-
-			//add daily case
-
-			data: [
-				13, 22, 16, 26, 20, 46, 22
-			],
-			backgroundColor: '#F5AEA8'
-		}]
-	},
-	options: {
-		title: {
-			display: true,
-			text: 'Daily Deaths in India (Week)',
-			fontSize: 40
-		},
-		legend: {
-			display: true
-		},
-		layout: {
-			padding: {
-				left: 25,
-				right: 25,
-			}
-		}
-	}
-});
+//Chart.defaults.global.defaultFontFamily = 'Nunito';
+//Chart.defaults.global.defaultFontSize = 25;
+//Chart.defaults.global.defaultFontColor = '#000';
+//
+//let massPopChart3 = new Chart(myChart3, {
+//	type: 'line',
+//	data: {
+//
+//		//add a space
+//
+//		labels: ['4 Apr', '5 Apr', '6 Apr', '7 Apr', '8 Apr', '9 Apr', '10 Apr'],
+//		datasets: [{
+//			label: 'Death',
+//
+//			//add daily case
+//
+//			data: [
+//				13, 22, 16, 26, 20, 46, 22
+//			],
+//			backgroundColor: '#F5AEA8'
+//		}]
+//	},
+//	options: {
+//		title: {
+//			display: true,
+//			text: 'Daily Deaths in India (Week)',
+//			fontSize: 40
+//		},
+//		legend: {
+//			display: true
+//		},
+//		layout: {
+//			padding: {
+//				left: 25,
+//				right: 25,
+//			}
+//		}
+//	}
+//});
 
 
 
@@ -212,7 +212,7 @@ let massPopChart2 = new Chart(myChart2, {
 			//add daily case
 
 			data: [
-				28, 76, 223, 252, 177, 164, 114, 30, 6, 2
+				61, 130, 334, 382, 267, 226, 153, 47, 7, 2
 			],
 			backgroundColor: '#FED5A9'
 		}]
@@ -250,10 +250,10 @@ const news_url = 'https://api.covid19india.org/updatelog/log.json';
 
 async function getData() {
 	const response = await fetch(api_url);
-		const response50 = await fetch(news_url);
+	const response50 = await fetch(news_url); //this is for the live news/updates
 
 	const data = await response.json();
-		const data50 = await response50.json();
+	const data50 = await response50.json();
 
 
 	document.getElementById("total").innerHTML = (data.statewise[0].confirmed);
@@ -263,7 +263,172 @@ async function getData() {
 	document.getElementById("death").innerHTML = (data.statewise[0].deaths);
 	//	console.log(data.statewise[0].deaths);
 	//	console.log(data.statewise);
-	console.log(data50);
+	console.log(data);
+
+
+	/******************************************/
+
+
+
+	var dc_chart = data.cases_time_series.length - 1;
+	console.log(data.cases_time_series[dc_chart].dailyconfirmed); //last data
+
+
+	let myChart = document.getElementById('myChart').getContext('2d');
+
+	//Global options
+	Chart.defaults.global.defaultFontFamily = 'Nunito';
+	Chart.defaults.global.defaultFontSize = 25;
+	Chart.defaults.global.defaultFontColor = '#000';
+
+	let massPopChart = new Chart(myChart, {
+		type: 'bar',
+		data: {
+
+			//add a space
+
+			labels: [data.cases_time_series[dc_chart - 9].date, data.cases_time_series[dc_chart - 8].date, data.cases_time_series[dc_chart - 7].date, data.cases_time_series[dc_chart - 6].date, data.cases_time_series[dc_chart - 5].date, data.cases_time_series[dc_chart - 4].date, data.cases_time_series[dc_chart - 3].date, data.cases_time_series[dc_chart - 2].date, data.cases_time_series[dc_chart - 1].date, data.cases_time_series[dc_chart].date],
+			datasets: [{
+				label: 'Confirmed Case',
+
+				//add daily case
+
+				data: [
+				data.cases_time_series[dc_chart - 9].dailyconfirmed, data.cases_time_series[dc_chart - 8].dailyconfirmed, data.cases_time_series[dc_chart - 7].dailyconfirmed, data.cases_time_series[dc_chart - 6].dailyconfirmed, data.cases_time_series[dc_chart - 5].dailyconfirmed, data.cases_time_series[dc_chart - 4].dailyconfirmed, data.cases_time_series[dc_chart - 3].dailyconfirmed, data.cases_time_series[dc_chart - 2].dailyconfirmed, data.cases_time_series[dc_chart - 1].dailyconfirmed, data.cases_time_series[dc_chart].dailyconfirmed
+			],
+				backgroundColor: '#ACD1F2'
+		}]
+		},
+		options: {
+			title: {
+				display: true,
+				text: 'Cases in India (Last 10 days)',
+				fontSize: 40
+			},
+			legend: {
+				display: true
+			},
+			layout: {
+				padding: {
+					left: 25,
+					right: 25,
+				}
+			}
+		}
+	});
+
+
+
+
+
+	/******************************************/
+
+
+
+
+
+
+	let myChart3 = document.getElementById('myChart3').getContext('2d');
+
+	//Global options
+	Chart.defaults.global.defaultFontFamily = 'Nunito';
+	Chart.defaults.global.defaultFontSize = 25;
+	Chart.defaults.global.defaultFontColor = '#000';
+
+	let massPopChart3 = new Chart(myChart3, {
+		type: 'bar',
+		data: {
+
+			//add a space
+
+			labels: [data.cases_time_series[dc_chart - 9].date, data.cases_time_series[dc_chart - 8].date, data.cases_time_series[dc_chart - 7].date, data.cases_time_series[dc_chart - 6].date, data.cases_time_series[dc_chart - 5].date, data.cases_time_series[dc_chart - 4].date, data.cases_time_series[dc_chart - 3].date, data.cases_time_series[dc_chart - 2].date, data.cases_time_series[dc_chart - 1].date, data.cases_time_series[dc_chart].date],
+			datasets: [{
+				label: 'Death',
+
+				//add daily case
+
+				data: [
+				data.cases_time_series[dc_chart - 9].dailydeceased, data.cases_time_series[dc_chart - 8].dailydeceased, data.cases_time_series[dc_chart - 7].dailydeceased, data.cases_time_series[dc_chart - 6].dailydeceased, data.cases_time_series[dc_chart - 5].dailydeceased, data.cases_time_series[dc_chart - 4].dailydeceased, data.cases_time_series[dc_chart - 3].dailydeceased, data.cases_time_series[dc_chart - 2].dailydeceased, data.cases_time_series[dc_chart - 1].dailydeceased, data.cases_time_series[dc_chart].dailydeceased
+			],
+				backgroundColor: '#F5AEA8'
+		}]
+		},
+		options: {
+			title: {
+				display: true,
+				text: 'Death in India (Last 10 days)',
+				fontSize: 40
+			},
+			legend: {
+				display: true
+			},
+			layout: {
+				padding: {
+					left: 25,
+					right: 25,
+				}
+			}
+		}
+	});
+
+
+
+
+
+
+
+
+	/******************************************/
+
+
+
+
+
+
+	let myChart6 = document.getElementById('myChart6').getContext('2d');
+
+	//Global options
+	Chart.defaults.global.defaultFontFamily = 'Nunito';
+	Chart.defaults.global.defaultFontSize = 25;
+	Chart.defaults.global.defaultFontColor = '#000';
+
+	let massPopChart6 = new Chart(myChart6, {
+		type: 'bar',
+		data: {
+
+			//add a space
+
+			labels: [data.cases_time_series[dc_chart - 9].date, data.cases_time_series[dc_chart - 8].date, data.cases_time_series[dc_chart - 7].date, data.cases_time_series[dc_chart - 6].date, data.cases_time_series[dc_chart - 5].date, data.cases_time_series[dc_chart - 4].date, data.cases_time_series[dc_chart - 3].date, data.cases_time_series[dc_chart - 2].date, data.cases_time_series[dc_chart - 1].date, data.cases_time_series[dc_chart].date],
+			datasets: [{
+				label: 'Recovered',
+
+				//add daily case
+
+				data: [
+				data.cases_time_series[dc_chart - 9].dailyrecovered, data.cases_time_series[dc_chart - 8].dailyrecovered, data.cases_time_series[dc_chart - 7].dailyrecovered, data.cases_time_series[dc_chart - 6].dailyrecovered, data.cases_time_series[dc_chart - 5].dailyrecovered, data.cases_time_series[dc_chart - 4].dailyrecovered, data.cases_time_series[dc_chart - 3].dailyrecovered, data.cases_time_series[dc_chart - 2].dailyrecovered, data.cases_time_series[dc_chart - 1].dailyrecovered, data.cases_time_series[dc_chart].dailyrecovered
+			],
+				backgroundColor: '#a8dab5'
+		}]
+		},
+		options: {
+			title: {
+				display: true,
+				text: 'Recovery in India (Last 10 days)',
+				fontSize: 40
+			},
+			legend: {
+				display: true
+			},
+			layout: {
+				padding: {
+					left: 25,
+					right: 25,
+				}
+			}
+		}
+	});
+
+
 
 
 
@@ -426,8 +591,3 @@ var interval = setInterval(function () {
 var interval = setInterval(function () {
 	getData3();
 }, 300000);
-
-
-
-
-
