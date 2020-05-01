@@ -142,7 +142,7 @@ body {
 	background-image: var(--purple-gradient);
 	margin-left: 6.75vw;
 	border-radius: 1.5vh;
-	
+
 	margin-top: 6vh;
 }
 
@@ -157,7 +157,7 @@ body {
 	background-image: var(--transparent);
 	margin-left: 6.75vw;
 	border-radius: 1.5vh;
-	
+
 	margin-top: 28.5vh;
 }
 
@@ -166,8 +166,21 @@ body {
 }
 
 
+
+
+/*data styling*/
+
+
+
+
+
+
 /*spacing*/
 
 p {
 	margin-top: 6vh;
+}
+
+.flex {
+	display: flex;
 }
