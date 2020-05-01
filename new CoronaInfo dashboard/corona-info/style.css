@@ -9,10 +9,14 @@
 	/*  logo colors*/
 	--red: #de5c5c;
 	--transparent: #de5c5c00;
-	
-/*	card colors*/
+
+	/*	card colors*/
 	--card-light: #fff;
 	--card-dark: #232222;
+
+	/*	card gradient*/
+	--red-gradient: linear-gradient(to right, #de5c5c 0%, #ffaeae 100%);
+	--purple-gradient: linear-gradient(to right, #837df7 0%, #c0bcff 100%);
 
 }
 
@@ -102,4 +106,20 @@ body {
 	border-radius: 2vh 2vh 0 0;
 	z-index: 100;
 	position: absolute;
+}
+
+
+.india {
+	width: 80vw;
+	height: 18.5vh;
+	background-image: var(--red-gradient);
+	margin-left: 6.75vw;
+	border-radius: 1.5vh;
+}
+
+
+/*spacing*/
+
+p {
+	margin-top: 6vh;
 }
