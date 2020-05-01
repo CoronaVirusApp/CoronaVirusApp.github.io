@@ -18,6 +18,21 @@
 	--state-card-light: #edeeef;
 	--state-card-dark: #111111;
 
+	/*	state card heading colors*/
+	--state-card-head-light: #dcdcdc;
+	--state-card-headfont-light: #7C848B;
+
+	--state-card-head-dark: #232222;
+	--state-card-headfont-dark: #D1D1D1;
+
+	/*	state card data colors*/
+	--state-card-data-light: #ffffff;
+	--state-card-datafont-light: #7c848b;
+
+	--state-card-data-dark: #232222;
+	--state-card-datafont-dark: #D1D1D1;
+
+
 	/*	card gradient*/
 	--red-gradient: linear-gradient(to right, #de5c5c 0%, #ffaeae 100%);
 	--purple-gradient: linear-gradient(to right, #837df7 0%, #c0bcff 100%);
@@ -329,25 +344,92 @@ p {
 
 .state-card .heading {
 	display: flex;
+	padding-top: 2.2vh;
 }
 
 .state-card .heading .state-name-0 {
-	border-radius: 1vh;
-	background-color: #dcdcdc;
+	border-radius: 0.8vh;
+	background-color: var(--state-card-head-light);
 	height: 3vh;
 	width: 35vw;
+	margin-right: 2vw;
+	margin-left: 3.5vw;
 }
 
 .state-card .heading .state-total-0 {
-	border-radius: 1vh;
-	background-color: #dcdcdc;
+	border-radius: 0.8vh;
+	background-color: var(--state-card-head-light);
+	height: 3vh;
+	width: 17vw;
+	margin-right: 2vw;
+}
+
+.state-card .heading .state-deaths-0 {
+	border-radius: 0.75vh;
+	background-color: var(--state-card-head-light);
 	height: 3vh;
 	width: 17vw;
 }
 
-.state-card .heading .state-deaths-0 {
-	border-radius: 1vh;
-	background-color: #dcdcdc;
+
+.state-card .heading .state-name-0 h1,
+.state-card .heading .state-total-0 h1,
+.state-card .heading .state-deaths-0 h1 {
+	font-family: 'Oswald', sans-serif;
+	font-size: 1.4vh;
+	font-weight: normal;
+	line-height: 1;
+	letter-spacing: 0.55px;
+	text-align: left;
+	color: var(--state-card-headfont-light);
+	text-align: center;
+	margin-top: 0.8vh;
+}
+
+
+
+/*state data calculations*/
+
+.state-card .s {
+	display: flex;
+	padding-top: 1.25vh;
+}
+
+.state-card .s .state-name-1 {
+	border-radius: 0.8vh;
+	background-color: var(--state-card-data-light);
+	height: 3vh;
+	width: 35vw;
+	margin-right: 2vw;
+	margin-left: 3.5vw;
+}
+
+.state-card .s .state-total-1 {
+	border-radius: 0.8vh;
+	background-color: var(--state-card-data-light);
 	height: 3vh;
 	width: 17vw;
+	margin-right: 2vw;
+}
+
+.state-card .s .state-deaths-1 {
+	border-radius: 0.75vh;
+	background-color: var(--state-card-data-light);
+	height: 3vh;
+	width: 17vw;
+}
+
+
+.state-card .s .state-name-1 h1,
+.state-card .s .state-total-1 h1,
+.state-card .s .state-deaths-1 h1 {
+	font-family: 'Oswald', sans-serif;
+	font-size: 1.4vh;
+	font-weight: normal;
+	line-height: 1;
+	letter-spacing: 0.55px;
+	text-align: left;
+	color: var(--state-card-datafont-light);
+	text-align: center;
+	margin-top: 0.8vh;
 }
