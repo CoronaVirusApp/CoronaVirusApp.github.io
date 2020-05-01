@@ -455,7 +455,22 @@ async function getData() {
 	//	console.log(data.statewise[4].deaths);
 
 
-
+	
+	
+	for(i=1;i<=37;i++)
+		{
+			if(document.getElementById("s"+i+"-name").innerHTML == "ANDAMAN AND NICOBAR ISLANDS")
+				{
+					document.getElementById("s"+i+"-name").innerHTML = "A & N ISLANDS";
+				}
+			
+			if(document.getElementById("s"+i+"-name").innerHTML == "DADRA AND NAGAR HAVELI")
+				{
+					document.getElementById("s"+i+"-name").innerHTML = "D & N HAVELI";
+				}
+		}
+	
+	
 }
 
 
