@@ -1,7 +1,7 @@
 //0 means true
 //1 means false
 
-console.log(localStorage);
+//console.log(localStorage);
 
 //checking if dark mode was already selected or not
 

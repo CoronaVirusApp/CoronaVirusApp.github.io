@@ -14,6 +14,10 @@
 	--card-light: #fff;
 	--card-dark: #232222;
 
+	/*	state card colors*/
+	--state-card-light: #edeeef;
+	--state-card-dark: #111111;
+
 	/*	card gradient*/
 	--red-gradient: linear-gradient(to right, #de5c5c 0%, #ffaeae 100%);
 	--purple-gradient: linear-gradient(to right, #837df7 0%, #c0bcff 100%);
@@ -199,7 +203,7 @@ body {
 }
 
 
-.num-flex h5{
+.num-flex h5 {
 	font-family: 'Oswald', sans-serif;
 	font-size: 1.4vh;
 	font-weight: normal;
@@ -209,7 +213,7 @@ body {
 	color: #fff;
 }
 
-.india-deaths{
+.india-deaths {
 	margin-top: 0.5vh;
 	font-family: 'Oswald', sans-serif;
 	font-size: 3.25vh;
@@ -220,7 +224,7 @@ body {
 	color: #fff;
 }
 
-.india-recovered{
+.india-recovered {
 	margin-top: 0.5vh;
 	font-family: 'Oswald', sans-serif;
 	font-size: 3.25vh;
@@ -232,7 +236,7 @@ body {
 }
 
 
-.num-flex div{
+.num-flex div {
 	padding-right: 5vw;
 }
 
@@ -265,7 +269,7 @@ body {
 }
 
 
-.num-flex h5{
+.num-flex h5 {
 	font-family: 'Oswald', sans-serif;
 	font-size: 1.4vh;
 	font-weight: normal;
@@ -275,7 +279,7 @@ body {
 	color: #fff;
 }
 
-.state-deaths{
+.state-deaths {
 	margin-top: 0.5vh;
 	font-family: 'Oswald', sans-serif;
 	font-size: 3.25vh;
@@ -286,7 +290,7 @@ body {
 	color: #fff;
 }
 
-.state-recovered{
+.state-recovered {
 	margin-top: 0.5vh;
 	font-family: 'Oswald', sans-serif;
 	font-size: 3.25vh;
@@ -308,4 +312,42 @@ p {
 .num-flex {
 	padding-top: 1vh;
 	display: flex;
+}
+
+
+
+/*state card*/
+
+.state-card {
+	background-color: var(--state-card-light);
+	width: 80vw;
+	height: 60vh;
+	margin-left: 6.75vw;
+	margin-top: 6vh;
+	border-radius: 1.5vh;
+}
+
+.state-card .heading {
+	display: flex;
+}
+
+.state-card .heading .state-name-0 {
+	border-radius: 1vh;
+	background-color: #dcdcdc;
+	height: 3vh;
+	width: 35vw;
+}
+
+.state-card .heading .state-total-0 {
+	border-radius: 1vh;
+	background-color: #dcdcdc;
+	height: 3vh;
+	width: 17vw;
+}
+
+.state-card .heading .state-deaths-0 {
+	border-radius: 1vh;
+	background-color: #dcdcdc;
+	height: 3vh;
+	width: 17vw;
 }
