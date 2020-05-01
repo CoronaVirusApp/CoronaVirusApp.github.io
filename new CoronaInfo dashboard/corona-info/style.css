@@ -170,6 +170,68 @@ body {
 
 /*data styling*/
 
+.india .numbers {
+	margin-left: 5vw;
+	padding-top: 2vh;
+}
+
+.india .numbers h3 {
+	font-family: 'Oswald', sans-serif;
+	font-size: 1.8vh;
+	font-weight: normal;
+	line-height: 1;
+	letter-spacing: 0.55px;
+	text-align: left;
+	color: #fff;
+}
+
+.india-total {
+	font-family: 'Oswald', sans-serif;
+	font-size: 4.5vh;
+	font-weight: normal;
+	line-height: 1.45;
+	letter-spacing: 0.55px;
+	text-align: left;
+	color: #fff;
+}
+
+
+.num-flex h5{
+	font-family: 'Oswald', sans-serif;
+	font-size: 1.4vh;
+	font-weight: normal;
+	line-height: 1;
+	letter-spacing: 0.55px;
+	text-align: left;
+	color: #fff;
+}
+
+.india-deaths{
+	margin-top: 0.5vh;
+	font-family: 'Oswald', sans-serif;
+	font-size: 3.25vh;
+	font-weight: normal;
+	line-height: 1;
+	letter-spacing: 0.55px;
+	text-align: left;
+	color: #fff;
+}
+
+.india-recovered{
+	margin-top: 0.5vh;
+	font-family: 'Oswald', sans-serif;
+	font-size: 3.25vh;
+	font-weight: normal;
+	line-height: 1;
+	letter-spacing: 0.55px;
+	text-align: left;
+	color: #fff;
+}
+
+
+.num-flex div{
+	padding-right: 5vw;
+}
 
 
 
@@ -181,6 +243,7 @@ p {
 	margin-top: 6vh;
 }
 
-.flex {
+.num-flex {
+	padding-top: 1vh;
 	display: flex;
 }
