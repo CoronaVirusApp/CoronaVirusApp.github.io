@@ -117,7 +117,7 @@ body {
 
 .card {
 	width: 93.5vw;
-	height: 120vh;
+	height: 240vh;
 	background-color: var(--card-light);
 	margin-left: 3.25vw;
 	margin-top: 9vh;
@@ -336,7 +336,7 @@ p {
 .state-card {
 	background-color: var(--state-card-light);
 	width: 80vw;
-	height: 60vh;
+	height: 175vh;
 	margin-left: 6.75vw;
 	margin-top: 6vh;
 	border-radius: 1.5vh;
