@@ -1,4 +1,65 @@
+/*color variables*/
+
+:root {
+
+	/*	background colors*/
+	--bg-light: #FCF4EF;
+	--bg-dark: #121212;
+
+	/*  logo colors*/
+	--red: #de5c5c;
+	--transparent: #de5c5c00;
+
+}
+
+/*******************************/
+
 * {
 	margin: 0;
 	padding: 0;
 }
+
+body {
+	background-color: var(--bg-light);
+}
+
+.top {
+	background-color: var(--bg-light);
+	display: flex;
+}
+
+
+
+
+/*logo styling*/
+
+.logo {
+	display: flex;
+}
+
+.logo h1 {
+	-webkit-text-stroke: 2px var(--red);
+	font-family: Montserrat;
+	font-size: 2.5vh;
+	font-weight: bold;
+	letter-spacing: 1px;
+	text-align: center;
+	color: var(--red);
+}
+
+.logo h2 {
+	-webkit-text-stroke: 2px var(--red);
+	font-family: Montserrat;
+	font-size: 2.5vh;
+	font-weight: bold;
+	letter-spacing: 1px;
+	text-align: center;
+	color: var(--transparent);
+}
+
+
+
+
+/*night logo styling*/
+
+
