@@ -135,6 +135,37 @@ body {
 }
 
 
+
+.state {
+	width: 80vw;
+	height: 18.5vh;
+	background-image: var(--purple-gradient);
+	margin-left: 6.75vw;
+	border-radius: 1.5vh;
+	
+	margin-top: 6vh;
+}
+
+.state-image {
+	position: absolute;
+	z-index: 1000;
+	top: 0;
+	right: 0;
+	margin-top: 4vh;
+	margin-right: 13vw;
+	height: 18.5vh;
+	background-image: var(--transparent);
+	margin-left: 6.75vw;
+	border-radius: 1.5vh;
+	
+	margin-top: 28.5vh;
+}
+
+.state-image img {
+	height: 22.6vh;
+}
+
+
 /*spacing*/
 
 p {
