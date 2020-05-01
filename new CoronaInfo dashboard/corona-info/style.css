@@ -9,6 +9,10 @@
 	/*  logo colors*/
 	--red: #de5c5c;
 	--transparent: #de5c5c00;
+	
+/*	card colors*/
+	--card-light: #fff;
+	--card-dark: #232222;
 
 }
 
@@ -24,10 +28,13 @@ body {
 }
 
 .top {
+	margin-top: 1vh;
 	background-color: var(--bg-light);
 	display: flex;
 	text-align: center;
 	justify-content: center;
+	position: fixed;
+	width: 100vw;
 }
 
 
@@ -79,4 +86,20 @@ body {
 .notification {
 	height: 2.5vh;
 	padding-top: 2vh;
+}
+
+
+
+/*card styling*/
+
+.card {
+	width: 93.5vw;
+	height: 120vh;
+	background-color: var(--card-light);
+	margin-left: 3.25vw;
+	margin-top: 9vh;
+	box-shadow: 10px 10px 50px 0 #00000029;
+	border-radius: 2vh 2vh 0 0;
+	z-index: 100;
+	position: absolute;
 }
