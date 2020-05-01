@@ -26,6 +26,8 @@ body {
 .top {
 	background-color: var(--bg-light);
 	display: flex;
+	text-align: center;
+	justify-content: center;
 }
 
 
@@ -35,6 +37,9 @@ body {
 
 .logo {
 	display: flex;
+	padding-left: 20vw;
+	padding-right: 20vw;
+	padding-top: 2vh;
 }
 
 .logo h1 {
@@ -60,6 +65,18 @@ body {
 
 
 
-/*night logo styling*/
+/*night mode logo styling*/
+
+.night {
+	height: 2.5vh;
+	padding-top: 2vh;
+}
 
 
+
+/*notification logo styling*/
+
+.notification {
+	height: 2.5vh;
+	padding-top: 2vh;
+}
