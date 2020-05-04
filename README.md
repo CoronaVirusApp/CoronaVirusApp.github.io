@@ -1,9 +1,11 @@
 <a href="https://coronavirusapp.github.io"><img src="https://raw.githubusercontent.com/Druhin13/corona/master/logo.png"></a>
 
-# Corona Info 🇮🇳<br><img src="https://img.shields.io/github/stars/Druhin13/corona?style=social">  [![Awesome](https://camo.githubusercontent.com/13c4e50d88df7178ae1882a203ed57b641674f94/68747470733a2f2f63646e2e7261776769742e636f6d2f73696e647265736f726875732f617765736f6d652f643733303566333864323966656437386661383536353265336136336531353464643865383832392f6d656469612f62616467652e737667)](https://github.com/soroushchehresa/awesome-coronavirus#applications-and-bots)  <a target="none" href="https://druh.in"><img src="https://img.shields.io/badge/Made%20by-Druhin-131313"></a>
-<a href="https://coronavirusapp.github.io"><img src="https://img.shields.io/website?down_color=lightgrey&down_message=maintenance&up_color=green&up_message=online&url=https%3A%2F%2Fcoronavirusapp.github.io"></a>  <img src="https://img.shields.io/uptimerobot/ratio/7/m784709526-2cb60baaa86e5acb72fee78d">  <a href="https://www.ssllabs.com/ssltest/analyze?d=coronavirusapp.github.io"><img src="https://img.shields.io/badge/status-A%2B-brightgreen"></a>  <a href="https://github.com/Druhin13/corona"><img src="https://img.shields.io/github/last-commit/Druhin13/corona"></a>  <img src="https://img.shields.io/github/commits-since/Druhin13/corona/2.2">
 
-<a href="https://github.com/Druhin13/corona/blob/master/LICENSE"><img src="https://img.shields.io/github/license/Druhin13/corona"></a>  <img src="https://img.shields.io/github/languages/code-size/Druhin13/corona"> <img src="https://img.shields.io/github/issues-raw/Druhin13/corona">  <img src="https://img.shields.io/github/v/release/Druhin13/corona">  <img src="https://img.shields.io/github/languages/count/Druhin13/corona">  <img src="https://img.shields.io/github/languages/top/Druhin13/corona?color=yellow">
+# Corona Info 🇮🇳<br><img src="https://img.shields.io/github/stars/Druhin13/corona?style=social">  [![Awesome](https://camo.githubusercontent.com/13c4e50d88df7178ae1882a203ed57b641674f94/68747470733a2f2f63646e2e7261776769742e636f6d2f73696e647265736f726875732f617765736f6d652f643733303566333864323966656437386661383536353265336136336531353464643865383832392f6d656469612f62616467652e737667)](https://github.com/soroushchehresa/awesome-coronavirus#applications-and-bots)  <a target="none" href="https://druh.in"><img src="https://img.shields.io/badge/Made%20by-Druhin-131313"></a>
+<a href="https://coronavirusapp.github.io"><img src="https://img.shields.io/website?down_color=lightgrey&down_message=maintenance&up_color=green&up_message=online&url=https%3A%2F%2Fcoronavirusapp.github.io"></a>  <img src="https://img.shields.io/uptimerobot/ratio/7/m784709526-2cb60baaa86e5acb72fee78d">  <a href="https://www.ssllabs.com/ssltest/analyze?d=coronavirusapp.github.io"><img src="https://img.shields.io/badge/status-A%2B-brightgreen"></a>  <a href="https://github.com/Druhin13/corona"><img src="https://img.shields.io/github/last-commit/Druhin13/corona"></a>  <img src="https://img.shields.io/github/commits-since/Druhin13/corona/3.0">
+
+<a href="https://github.com/Druhin13/corona/blob/master/LICENSE"><img src="https://img.shields.io/github/license/Druhin13/corona"></a>  <img src="https://img.shields.io/github/languages/code-size/Druhin13/corona"> [![Codacy Badge](https://api.codacy.com/project/badge/Grade/a66f29cbc49a4c7dbfacfdc4d8f9c105)](https://app.codacy.com/manual/Druhin13/corona?utm_source=github.com&utm_medium=referral&utm_content=Druhin13/corona&utm_campaign=Badge_Grade_Dashboard) <img src="https://img.shields.io/github/issues-raw/Druhin13/corona">  <img src="https://img.shields.io/github/v/release/Druhin13/corona">  <img src="https://img.shields.io/github/languages/count/Druhin13/corona">  <img src="https://img.shields.io/github/languages/top/Druhin13/corona?color=yellow">
+
 
 <br>
 
@@ -135,4 +137,49 @@ available at https://www.contributor-covenant.org/version/1/4/code-of-conduct.ht
 
 For answers to common questions about this code of conduct, see
 https://www.contributor-covenant.org/faq
+
+
+
+
+<br>
+<br>
+<br>
+
+<hr>
+
+
+
+
+# What's New 👀
+### _Release 3.0_ 🔥
+- A whole new UI 🤩
+- Simpler Interactions 😅
+- Dark mode 🌜
+- Notifications 🔔
+- Footer added 📰📌
+ & offcourse
+- Bug fixes 🤭
+<hr>
+
+### Support
+
+_Release 3.0_ is accessible only in **West Bengal**<br>
+Support for other states will be added in the _Release 3.1_<br>
+
+>IE 11+<br>
+>Edge 79+<br>
+>Firefox 72+<br>
+>Safari 12+<br>
+>Opera 66+<br>
+>Chrome 79+<br>
+>iOS 11+<br>
+>Android 4+<br>
+
+## Contact
+
+ Mail me - [contact@druh.in](mailto:contact@druh.in)<br>
+ Github - [https://github.com/Druhin13](https://github.com/Druhin13)<br>
+ Dribbble - [https://dribbble.com/druhin](https://dribbble.com/druhin)<br>
+ 
+Made with 💕 by  Druh.in
 
