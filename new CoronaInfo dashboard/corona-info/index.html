@@ -2,17 +2,35 @@
 <html lang="en">
 
 <head>
+
+
+	<!--	checking if its opened in desktop-->
+
+	<script type="text/javascript">
+		<!--
+		if (screen.width > 699) {
+			document.location = "https://coronavirusapp.github.io/coming-soon.html";
+		}
+		//
+		-->
+	</script>
+
+
 	<meta charset="UTF-8">
-	<title>CoronaInfo - Druhin</title>
+	<title>CoronaInfo by Druhin</title>
 
 
 	<!--meta tags-->
+	<link rel="icon" href="https://media.giphy.com/media/hTm5aSa0VVuu2BLh3F/giphy.gif" sizes="16x16">
 
 	<meta property="og:site_name" content="CoronaInfo by Druhin" />
 	<meta property="og:title" content="CoronaInfo India by Druhin" />
 	<meta property="og:description" content="Coronavirus Mobile Dashboard for India - Live Statistics (Refreshes every minute) | Helpline Numbers | Risks & Precautions" />
 	<meta property="og:image" content="https://raw.githubusercontent.com/Druhin13/corona/master/corona-info/GitHub%20banner.png">
 	<meta property="og:url" content="https://coronavirusapp.github.io">
+
+
+	<script data-ad-client="ca-pub-6364586835695815" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
 
 
@@ -35,6 +53,11 @@
 	<!--	<script src="transition.js"></script>-->
 	<script src="notification.js"></script>
 
+
+
+	<!--	<script data-name="BMC-Widget" src="buyme.js" data-id="Druhin" data-description="Support me by donating!" data-message="Thanks for using CoronaInfo" data-color="#FF5F5F" data-position="right" data-x_margin="30" data-y_margin="30"></script>-->
+
+
 </head>
 
 
@@ -54,15 +77,34 @@
 
 	<div id="news" class="news">
 		<div id="news1" class="news1">
-			<h1 id="news1-t" class="news1-t">12 MINS AGO</h1>
-			<h1 id="news1-c" class="news1-c">38 RECOVERIES IN ANDHRA PRADESH</h1>
+			<h1 id="news1-t" class="news1-t">... MINS AGO</h1>
+			<h1 id="news1-c" class="news1-c">.... RECOVERIES IN .............</h1>
 		</div>
 	</div>
 
 
+
+	<!--donate me	-->
+	<a href="https://www.buymeacoffee.com/Druhin" onclick="large()">
+		<div class="donate">
+			<img src="https://cdn.buymeacoffee.com/widget/assets/coffee%20cup.svg">
+		</div>
+	</a>
+
+
+	<!--
+
+		<div id="thanks" class="hide thanks" onclick="hide()">
+			<h1>Thanks for using CoronaInfo</h1>
+		</div>
+	s-->
+
+
+
+
 	<!--main card-->
 
-	<div id="card" class="card">
+	<div id="card" class="card" onclick="hide()">
 		<p></p>
 
 
@@ -124,7 +166,7 @@
 		</div>
 
 		<div class="state-image">
-			<img alt="Your's State map image" src="assets/WestBengal.svg">
+			<img id="state_img" alt="Your's State map image" src="assets/WestBengal.svg">
 		</div>
 
 
@@ -794,8 +836,6 @@
 
 
 
-
-
 		<a href="https://druh.in">
 			<!--		<img id="druhin" class="druhin" alt="Made by Druhin" src="assets/Druhin%20light.svg">-->
 			<h1 class="madeby">Made by</h1>
@@ -804,6 +844,7 @@
 				<h2>IN</h2>
 			</div>
 		</a>
+
 
 		<div class="footer">
 
@@ -820,7 +861,20 @@
 			</a>
 		</div>
 
+
+
+		<!--		<script type='text/javascript' src='//pl15459463.passtechusa.com/b6/fd/b2/b6fdb2e3d86581849f5fc04788c7e500.js'></script>-->
+
+
+
 	</div>
+
+
+
+
+
+
+
 
 
 	<script src="data.js"></script>
@@ -830,5 +884,14 @@
 	<script src="more.js"></script>
 	<script src="chart.js"></script>
 	<script src="death-sort.js"></script>
+	<script src="thanks.js"></script>
 
-</body></html>
+
+
+
+
+
+
+</body>
+
+</html>
