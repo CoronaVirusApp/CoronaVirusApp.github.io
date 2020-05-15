@@ -1,19 +1,18 @@
 # What's New 👀
-
-### _Release 3.1_ 🔥
+### _Release 3.0_ 🔥
 - A whole new UI 🤩
 - Simpler Interactions 😅
 - Dark mode 🌜
 - Notifications 🔔
-- Charts Added 📈📌
+- Footer added 📰📌
  & offcourse
 - Tons of Bug fixes 🤭
 <hr>
 
 ### Support
 
-_Release 3.1_ is accessible from every state and ut of India<br>
-<br>
+_Release 3.0_ is accessible only in **West Bengal**<br>
+Support for other states will be added in the _Release 3.1_<br>
 
 >IE 11+<br>
 >Edge 79+<br>
@@ -30,5 +29,5 @@ _Release 3.1_ is accessible from every state and ut of India<br>
  Github - [https://github.com/Druhin13](https://github.com/Druhin13)<br>
  Dribbble - [https://dribbble.com/druhin](https://dribbble.com/druhin)<br>
  
-Made with 💕 & ☕ by  Druh.in
+Made with 💕 by  Druh.in
 
