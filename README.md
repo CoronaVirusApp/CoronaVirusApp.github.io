@@ -32,5 +32,5 @@ Release 3.1 - Supports all state's data<br>
  Dribbble - [https://dribbble.com/druhin](https://dribbble.com/druhin)<br>
  Support me - [https://www.buymeacoffee.com/Druhin](buy me a coffee)<br>
  
-Made with 💕 by  Druh.in
+Made with 💕 & ☕ by  Druh.in
 
